@@ -5,13 +5,15 @@ These are primarily used in my employment at UofL.
 
 # NetUserExcelSheet
 Will take a list of users in a csv file and run them all against the net user command.  
-Pre-conditions: Must be connected to the network your AD is on and able to run the net user command.  
+Pre-conditions:  
+	Must be connected to the network your AD is on and able to run the net user command.  
 Results:  
 Each user will have the results of the net stat command run  
 
 # NetUserManual
 Will take a list of users entered by the one running the program and run them all against the net user command.  
-Pre-conditions: Must be connected to the network your AD is on and able to run the net user command.  
+Pre-conditions:  
+  Must be connected to the network your AD is on and able to run the net user command.    
 Results:  
 Each user will have the results of the net stat command run  
 
