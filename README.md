@@ -7,6 +7,7 @@ These are primarily used in my employment at UofL.
 Will take a list of users in a csv file and run them all against the net user command.  
 Pre-conditions:  
 	- Must be connected to the network your AD is on and able to run the net user command.  
+	
 Results:  
 Each user will have the results of the net stat command run  
 
@@ -40,6 +41,7 @@ This script takes a list of users from a csv and will determine the following:
 		$ConAccessHash.[KeyFromList]
 		``` will give the specifics from that user  
 Commented at the bottom of the script is a code snippet that if run, will give the date that a user's password expires.  
+
 Pre-Condition:  
 	- Have access to the ActiveDirectory module  
 	- Have access to AzureAD module  
