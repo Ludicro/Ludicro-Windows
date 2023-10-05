@@ -9,6 +9,5 @@ $EmailSubject = 'PowerShell Email Test'
 $EmailBody = "This is a test"
 
 $SMTPServer = 'Server'
-#smtp.louisville.edu
 
 Send-MailMessage -From "Sender <$EmailFrom>" -To "Recipient <$EmailTo>" -Subject "PowerShell Email" -Body "This is a test email" -SmtpServer "$SMTPServer"
