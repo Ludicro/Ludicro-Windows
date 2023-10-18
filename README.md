@@ -20,7 +20,7 @@ Results:
 Each user will have the results of the net stat command run  
 
 # EmailUsers - Firewall
-This script was designed to send an email to managers of various firewalls. This script is not working as of right now and development has stopped as the project this was for has been reworked.  
+This script was designed to send an email to managers of various firewalls. This script is not working as of right now and development has stopped as the project this was for has been discontinued, there are however, various resources to accomplish this online.  
 
 # InactiveUser
 ***This script is outdated, but if you do not have access to the Active Directory module, this works well***  
