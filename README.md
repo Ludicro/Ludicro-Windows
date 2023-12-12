@@ -48,4 +48,4 @@ Pre-Condition:
 	- Have logon credentials to AzureAD  
 	
 Usage:  
-	Run the Connect-AzureAD command that is commented out once per session and login with your credentials then run the script.  
+	Run the Connect-AzureAD command that is commented out once per session and login with your credentials then run the script with the proper CSV file.
