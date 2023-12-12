@@ -1,6 +1,6 @@
-﻿#Author: Luke Leveque
+#Author: Luke Leveque
 #Date: 9/11/2023
-#V1.1
+#V2.0
 #Description: Program will take a CSV file path and will return users if they meet any of the following criteria:
               #Password has expired
               #Account is in the inactive group
@@ -11,6 +11,8 @@
 #Run this once per session - sign in with credentials used for Azure and Microsoft Defender (e.g aad_XXX@cardmail...)
 #Connect-AzureAD
 
+
+#Grabs the relevant CSV file
 $PATH = Read-Host -Prompt "File Path" #Take user input for the file path
                                                                       #If quotes are present it still works after
                                                                       #some errors pop up
@@ -23,10 +25,16 @@ if(!$PATH) #If the user doesn't specifify a file, take the default CSV file as l
 
 $Users = Import-CSV -Path $PATH #Defines the list of users from the csv
 
+
+
+
 #Get the date for the past month and format
 $PastMonthDate = (Get-Date).AddDays(-60);
 $PastMonthDate = Get-Date($PastMonthDate) -format yyyy-MM-dd
 
+
+
+#Create the arrays
 $ExpiredPasswords = @() #Create the array to store users with expired passwords
 
 $InactiveUsers = @() #Create the array to store users found in the inactive group
@@ -37,6 +45,8 @@ $ErrorUsers = @() #Create the array to store users who generate an error during 
 $ConAccessHash = @{} #Create the hash to store the [user][user's conditional access failure reports]
 
 
+
+
 #Formatting
 $ExpiredPasswords += "-----------------------Expired Passwords----------------------`n"
 $InactiveUsers +=    "------------------------Inactive Users------------------------`n"
@@ -45,16 +55,21 @@ $ErrorUsers +=       "*                 Note: Users in this list may            
 $ErrorUsers +=       "*               appear here if the account may               *"
 $ErrorUsers +=       "*                     already be disabled                    *`n"
 
+
+
+
 $loopNum = 1 #var to format the output
-Foreach($User in $Users.Users) #For each user, try the following code
+Foreach($User in $Users.Users) #For each user, attempt the following code
 {
     
     Write-Output("------------------------------------------------------------------------")
     Write-Output("Attempting to check user: {0} - {1}" -f $loopNum, $User)
     $loopNum++
+
+
     Try
     {
-        #Get the information on the current user
+        #Get the password and group information on the current user
         $CurUser = Get-ADUser -Identity $User -Properties PasswordExpired #Gets the Password Expired Property for the user
         $CurUserGroups = Get-ADPrincipalGroupMembership -Identity $User #Gets groups the User is in
     
@@ -69,7 +84,7 @@ Foreach($User in $Users.Users) #For each user, try the following code
         {
             $InactiveUsers += Write-Output $User
         }
-        
+
         #Add conditional access failures 
         $ConAccessArray = @() #Intitialize/clear array of conditional access failures for each user
         #Get the conditional access failures:
@@ -92,6 +107,8 @@ Foreach($User in $Users.Users) #For each user, try the following code
     }
     
 }
+
+
 #formatting
 $ExpiredPasswords += "`n--------------------------------------------------------------"
 $InactiveUsers +=    "`n--------------------------------------------------------------"
