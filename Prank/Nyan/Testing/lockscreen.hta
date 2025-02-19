@@ -28,12 +28,25 @@
     </style>
     <script language="VBScript">
         Sub Window_OnLoad
-            screenNum = CInt(Replace(Mid(document.location.search, 8), """", ""))
-            ' Position each window at multiples of the screen width
+            writeScreenInfo
+            screenNum = CDbl(Replace(window.location.hash, "#", ""))
             xPos = Screen.Width * screenNum
             window.moveTo xPos, 0
-            window.focus()
+            window.focus
         End Sub
+    </script>
+    <script>
+        function writeScreenInfo() {
+            var fso = new ActiveXObject("Scripting.FileSystemObject");
+            var file = fso.OpenTextFile("C:\\Users\\Public\\screen_debug.log", 8, true);
+            file.WriteLine("Hash: " + window.location.hash);
+            file.WriteLine("Screen Width: " + screen.width);
+            file.WriteLine("Screen Height: " + screen.height);
+            file.WriteLine("Window Left: " + window.screenLeft);
+            file.WriteLine("Window Top: " + window.screenTop);
+            file.WriteLine("-------------------");
+            file.Close();
+        }
     </script>
 </head>
 <body>
