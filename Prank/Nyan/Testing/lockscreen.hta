@@ -26,15 +26,7 @@
             object-fit: fill;
         }
     </style>
-    <script language="VBScript">
-        Sub Window_OnLoad
-            writeScreenInfo
-            screenNum = CDbl(Replace(window.location.hash, "#", ""))
-            xPos = Screen.Width * screenNum
-            window.moveTo xPos, 0
-            window.focus
-        End Sub
-    </script>
+
     <script>
         function writeScreenInfo() {
             var fso = new ActiveXObject("Scripting.FileSystemObject");

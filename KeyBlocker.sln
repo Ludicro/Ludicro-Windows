@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prank", "Prank", "{F3C96419-CAC5-93D8-1637-914E1B14C121}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nyan", "Nyan", "{589B93CB-FBC4-8E7B-7C78-271AE7EEB073}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D5CC7898-62B6-25B4-E80F-89C202FE1CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyBlocker", "Prank\Nyan\Testing\KeyBlocker\KeyBlocker.csproj", "{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|x64.Build.0 = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Debug|x86.Build.0 = Debug|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|x64.ActiveCfg = Release|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|x64.Build.0 = Release|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|x86.ActiveCfg = Release|Any CPU
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{589B93CB-FBC4-8E7B-7C78-271AE7EEB073} = {F3C96419-CAC5-93D8-1637-914E1B14C121}
+		{D5CC7898-62B6-25B4-E80F-89C202FE1CE6} = {589B93CB-FBC4-8E7B-7C78-271AE7EEB073}
+		{DD8EDA48-6F5B-4EAF-8169-D41E556A5E68} = {D5CC7898-62B6-25B4-E80F-89C202FE1CE6}
+	EndGlobalSection
+EndGlobal
