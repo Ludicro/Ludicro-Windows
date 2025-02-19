@@ -1,0 +1,4 @@
+[Autorun]
+open=deploy.bat
+action=Run Lock Screen
+icon=myicon.ico
